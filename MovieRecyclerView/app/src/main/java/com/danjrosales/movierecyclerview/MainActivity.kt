@@ -1,19 +1,24 @@
 package com.danjrosales.movierecyclerview
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import android.widget.Toast
 import com.danjrosales.adapter.movieAdapter
 import com.danjrosales.movierecyclerview.listener.OnItemMovieSelectedListener
 import com.danjrosales.movierecyclerview.model.Movie
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import kotlinx.android.synthetic.main.item_contact.*
 
 class MainActivity : AppCompatActivity(),
     OnItemMovieSelectedListener {
+
+    private val movie: Movie= Movie()
 
     override fun onItemMovieSelected(movie: Movie) {
         Toast.makeText(baseContext, movie.name, Toast.LENGTH_LONG).show()
@@ -59,6 +64,18 @@ class MainActivity : AppCompatActivity(),
         /* R.id.action_add.setOnClickListener { view ->
               movieAdapter.addContact(Contact(11,"Ricardo","Moreno","54442234"),2)
           }*/
+
+        fab.setOnClickListener{view: View ->
+            Toast.makeText(baseContext, "Se guardo la información", Toast.LENGTH_LONG).show()
+           /* movie.id=1;
+            movie.name = nametextView.text.toString();
+            movie.director = lastNametextView.text.toString();
+            movie.type =  lastNametextView.text.toString();*/
+
+           /* var detailIntent= Intent(this, DetailActivity::class.java)
+            detailIntent.putExtra("movie", movie)
+            startActivity(detailIntent)*/
+        }
 
 
     }

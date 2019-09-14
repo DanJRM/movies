@@ -11,7 +11,7 @@ import com.danjrosales.movierecyclerview.model.Movie
 import kotlinx.android.synthetic.main.item_contact.view.*
 
 class movieAdapter(
-    val contacts: ArrayList<Movie>,
+    val movies: ArrayList<Movie>,
     val context: Context
 ) : RecyclerView.Adapter<ContactViewHolder>() {
 
@@ -28,26 +28,26 @@ class movieAdapter(
     } //Retorna la vista para agregarla al contexto
 
     override fun getItemCount(): Int { // Regresa tamaño de la vista
-        return contacts.size
+        return movies.size
     }
 
     override fun onBindViewHolder(p0: ContactViewHolder, p1: Int) {
         p0.numberphoneButton.setImageResource(android.R.drawable.sym_action_call)
         p0.contactImageView.setImageResource(R.mipmap.ic_launcher)
-        p0.nameTextView.setText(contacts[p1].name)
-        p0.lastNameTextView.setText(contacts[p1].director)
-        p0.setContact(contacts[p1])
+        p0.nameTextView.setText(movies[p1].name)
+        p0.lastNameTextView.setText(movies[p1].director)
+        p0.setContact(movies[p1])
         p0.setOnItemContactSelectedListener(onItemMovieSelectedListener)
     }
 
     public fun addContact(contact: Movie, position: Int) { //Agregar nuevos elementos a la lista
-        contacts.add(position, contact)
+        movies.add(position, contact)
         //notifyDataSetChanged() // Notifica a la lista
         notifyItemInserted(position) //Inserta en una posición
     }
 
     public fun removeContact(position: Int) { //Agregar nuevos elementos a la lista
-        contacts.removeAt(position)
+        movies.removeAt(position)
         notifyDataSetChanged() // Notifica a la lista
         notifyItemRemoved(position)
     }
@@ -59,9 +59,9 @@ class movieAdapter(
 
 class ContactViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val contactImageView = view.contact_imageView
-    val nameTextView = view.name_textView
-    val lastNameTextView = view.lastName_textView
-    val numberphoneButton = view.numberPhone_imageButton
+    val nameTextView = view.nametextView
+    val lastNameTextView = view.lastNametextView
+    val numberphoneButton = view.numberPhoneimageButton
     private lateinit var contact: Movie
 
     fun setContact(contact: Movie) {
