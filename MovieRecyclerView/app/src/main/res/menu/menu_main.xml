@@ -10,7 +10,7 @@
             app:showAsAction="ifRoom|withText" />
     <item
             android:id="@+id/action_remove"
-            android:icon="@android:drawable/stat_notify_more"
+            android:icon="@android:drawable/ic_input_delete"
             android:orderInCategory="100"
             android:title="Remove"
             app:showAsAction="ifRoom|withText" />

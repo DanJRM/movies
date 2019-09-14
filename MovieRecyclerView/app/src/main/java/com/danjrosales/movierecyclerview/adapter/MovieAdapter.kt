@@ -35,7 +35,7 @@ class movieAdapter(
         p0.numberphoneButton.setImageResource(android.R.drawable.sym_action_call)
         p0.contactImageView.setImageResource(R.mipmap.ic_launcher)
         p0.nameTextView.setText(contacts[p1].name)
-        p0.lastNameTextView.setText(contacts[p1].lastname)
+        p0.lastNameTextView.setText(contacts[p1].director)
         p0.setContact(contacts[p1])
         p0.setOnItemContactSelectedListener(onItemMovieSelectedListener)
     }
@@ -60,7 +60,7 @@ class movieAdapter(
 class ContactViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     val contactImageView = view.contact_imageView
     val nameTextView = view.name_textView
-    val lastNameTextView = view.lastname_textView
+    val lastNameTextView = view.lastName_textView
     val numberphoneButton = view.numberPhone_imageButton
     private lateinit var contact: Movie
 

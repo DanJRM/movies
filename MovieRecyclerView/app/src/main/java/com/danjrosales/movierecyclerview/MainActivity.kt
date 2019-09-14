@@ -38,8 +38,9 @@ class MainActivity : AppCompatActivity(),
         contactsRecyclerView.setHasFixedSize(true)
 
         val contacts = arrayListOf<Movie>(
-            Movie(1, "Daniel", "Rosales", "55665321"),
-            Movie(2, "Liliana", "Herrera", "54556789")
+            Movie(1, "Tiburón 1", "Spilbergo", "Terror",12),
+            Movie(2, "Tiburón 2", "Spilgerbo", "Terror", 23),
+            Movie(2, "Tiburón 3", "Spilgerbo", "Terror", 23)
         )
 
         movieAdapter = movieAdapter(contacts, baseContext)
@@ -86,19 +87,11 @@ class MainActivity : AppCompatActivity(),
         }
     }
 
-    fun add() {
-        movieAdapter.addContact(
-            Movie(
-                11,
-                "Ricardo",
-                "Moreno",
-                "54442234"
-            ), 2
-        )
+    fun add(){
+        movieAdapter.addContact(Movie(10,"Tiburon 4","Spilbergo","Terror", 2),2)
     }
 
-    fun remove() {
+    fun remove(){
         movieAdapter.removeContact(1)
     }
-
 }
